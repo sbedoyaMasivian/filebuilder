@@ -3,7 +3,7 @@ import moment from "moment";
 import _ from "lodash";
 import Is from "is_js";
 import BootstrapVue from "bootstrap-vue";
-import VueCodemirror from 'vue-codemirror'
+import VueCodemirror from "vue-codemirror";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,7 @@ import App from "./App.vue";
 import router from "./router/router";
 import store from "./store/store";
 import "./assets/scsss/custom.scss";
-import 'codemirror/lib/codemirror.css'
+import "codemirror/lib/codemirror.css"
 
 library.add(faFilePdf);
 library.add(faFileExcel);

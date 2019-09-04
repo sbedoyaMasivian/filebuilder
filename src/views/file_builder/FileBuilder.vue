@@ -1,8 +1,24 @@
 <template>
     <div>
+        <div class="bg-white wrapper-crear">
+            <b-row>
+                <b-col md="3">
+                    <div class="m-3 text-center">
+                        <span class="title-subsection">Tipo de archivo</span>
+                    </div>
+                </b-col>
+                <b-col></b-col>
+                <b-col md="4" >
+                    <div class="m-2 float-right">
+                        <b-button class="m-1 bg-cancelar btn-size">Cancelar</b-button>
+                        <b-button class="m-1 bg-crear">Crear</b-button>                         
+                    </div>
+                </b-col>
+            </b-row>   
+        </div>            
          <b-container fluid class="contenedor pb-2">
             <b-row>
-                <b-col md="5">
+                <b-col md="5 pr-0">
                     <div class="m-2">
                         <tipo-archivo />
                     </div>
@@ -10,7 +26,7 @@
                         <configuracion class="pb-5" />
                     </div>
                 </b-col>
-                <b-col md="6 mt-2 mb-2">
+                <b-col md="6 mt-2" >
                     <div class="bg-size">
                         <visualizador />
                     </div>
@@ -41,5 +57,24 @@
     }
      .bg-size{
         height: 100%;
+    }
+    .wrapper-crear{
+        height: 72px;
+    }
+    .title-subsection{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .bg-cancelar{
+        background-color: #fff;
+        color: #000;
+    }
+    .bg-crear{
+        background-color: #5CB85C;
+    }
+    .btn-size{
+        width: 87px;
+        height: 34px;
+
     }
 </style>

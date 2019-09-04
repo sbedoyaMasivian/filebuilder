@@ -1,15 +1,15 @@
 <template>
     <div class="bg-white border rounded bg-size">
-        <div class="p-2">
+        <div class="pr-2 pl-2 pt-2">
             <b-row>
                 <b-col md="2">
                     <div class="mt-2">
                         <Label class="mb-1 lbl">Opciones</Label>
                         <div>
-                            <span class="border-icon pr-1 pl-1">
+                            <span class="icon pr-1 pl-1">
                                 <font-awesome-icon icon="eye"  />
                             </span>
-                            <span class="border-icon pr-1 pl-1">
+                            <span class="icon pr-1 pl-1">
                                 <font-awesome-icon icon="trash-alt" /> 
                             </span>
                         </div>
@@ -33,7 +33,12 @@
         </div>
         <hr>
         <div class="p-2">
-             <area-code />
+             <area-code :code="code"  @updatingScore="updateScore"/>
+        </div>
+        <div class="wrapper-btn">
+            <div class="text-center">
+                <b-button class=" btn-pre" @click="mostrar">Previsualizar</b-button>
+            </div>               
         </div>
     </div>
 </template>
@@ -43,15 +48,26 @@
         name: "Visualizador",
         components:{
             "area-code": AreaCode
+        },
+        data(){
+            return{
+                code: ""
+            }            
+        },
+        methods:{
+            updateScore(newValue) {
+                this.code = newValue  // 3.Updating
+            },
+            mostrar(code){
+                this.code = code
+                console.log(this.code)
+            }   
         }
     }
 </script>
 <style lang="scss" scoped>
-    .border-icon{
-        background: #FFFFFF 0% 0% no-repeat padding-box;
-        border-radius: 4px 0px 0px 4px;
-        border-color: gray;
-        opacity: 1;
+    .icon{
+        color: #bdc4cc;
     }
     .lbl{
         text-align: left;
@@ -63,6 +79,16 @@
     .form-control{
         width: 80%;
         font-size: 0.7rem;
+    }
+    .wrapper-btn{
+        background-color: #EBEEF2;
+        height: 62px;
+    }
+    .btn-pre{
+        background-color: #002747;
+        margin: 10px;
+        width: 116px;
+        height: 34px;
     }
    
 </style>    

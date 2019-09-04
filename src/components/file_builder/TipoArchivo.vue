@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center bg-white border rounded wrapper">
+    <div class="text-center bg-white border rounded wrapper float-right mb-2">
         <b-row>
             <b-col md="4">
                 <div class="mt-3">
@@ -36,15 +36,13 @@ export default {
     .title-subsection{
         font-size: 16px;
         font-weight: 500;
-        font-family: "Segoe UI","Helvetica Neue","Microsoft Sans Serif",Helvetica,Arial,sans-serif;
     }
     .w-file{
         width: 30px;
         height: 30px !important;
     }
     .wrapper{
-        width: 70%;
-        margin: auto;
+        width: 70%; 
         padding: 15px;
     }
     .p{

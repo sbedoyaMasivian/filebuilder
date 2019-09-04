@@ -22,7 +22,7 @@
 <style lang="scss" scoped>
     .wrapper{
         width: 70%;
-        margin: auto;
+        float: right;
         padding: 15px;
     }
     .p-db{

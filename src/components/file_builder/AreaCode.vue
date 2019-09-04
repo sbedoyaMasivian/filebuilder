@@ -1,26 +1,6 @@
 <template>
-  <!-- bidirectional data binding（双向数据绑定） -->
-  <codemirror v-model="code" :options="cmOptions"></codemirror>
- 
-  <!-- or to manually control the datasynchronization（或者手动控制数据流，需要像这样手动监听changed事件） 
-  <codemirror ref="myCm"
-              :value="code" 
-              :options="cmOptions"
-              @ready="onCmReady"
-              @focus="onCmFocus"
-              @input="onCmCodeChange">
-  </codemirror> -->
- 
-  <!-- if Nust.js/SSR（如果在 Nuxt.js 环境下，需要外面包裹一层 no-ssr） 
-  <no-ssr placeholder="Codemirror Loading...">
-    <codemirror ref="myCm"
-                :value="code" 
-                :options="cmOptions"
-                @ready="onCmReady"
-                @focus="onCmFocus"
-                @input="onCmCodeChange">
-    </codemirror>
-  </no-ssr>-->
+  <!-- bidirectional data binding -->
+  <codemirror v-model="code" :options="cmOptions" class="CodeMirror" @input="onCmCodeChange"></codemirror>
 </template>
  
 <script>
@@ -34,12 +14,12 @@ export default {
   name: "AreaCode",
   data () {
     return {
-      code: 'const a = 10',
+      code: '',
       cmOptions: {
         // codemirror options
         tabSize: 4,
-        mode: 'text/javascript',
-        theme: 'monokai',
+        mode: "htmlmixed",
+        theme: "monokai",
         lineNumbers: true,
         line: true,
         // more codemirror options, 更多 codemirror 的高级配置...
@@ -47,25 +27,26 @@ export default {
     }
   },
   methods: {
-    onCmReady(cm) {
-      console.log('the editor is readied!', cm)
-    },
-    onCmFocus(cm) {
-      console.log('the editor is focus!', cm)
-    },
     onCmCodeChange(newCode) {
-      console.log('this is new code', newCode)
-      this.code = newCode
+		this.code = newCode
+		console.log("se cambio" + this.code)
+		this.$emit(this.code)
     }
   },
   computed: {
     codemirror() {
-      return this.$refs.myCm.codemirror
+      //return this.$refs.myCm.codemirror
+      console.log('this is current codemirror object', this.code)
     }
   },
   mounted() {
-    console.log('this is current codemirror object', this.codemirror)
+    //console.log('this is current codemirror object', this.code)
     // you can use this.codemirror to do something...
   }
 }
 </script>
+<style lang="scss" scoped>
+   .CodeMirror{
+        height: 380px !important;
+    }   
+</style>

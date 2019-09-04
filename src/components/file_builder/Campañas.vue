@@ -2,14 +2,15 @@
     <div class="pt-2">
         <div>
             <label>Campaña</label>
-            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" class="input-size" placeholder="Escoge una campaña"/>
-            <datalist id="ice-cream-flavors">
-                <option value="Chocolate"></option>
-                <option value="Coconut"></option>
-                <option value="Mint"></option>
-                <option value="Strawberry"></option>
-                <option value="Vanilla"></option>
-            </datalist>
+            <div class="form-group">
+            <select class="form-control" id="exampleFormControlSelect1" placeholder="escoge la columna">
+                <option disabled selected>Select your option</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div> 
         </div>
         <hr>
         <div>
@@ -38,7 +39,7 @@
             <b-row>
                 <b-col md="10">
                     <label>Contraseña</label>
-                    <font-awesome-icon icon="info-circle" class="ml-2"/>
+                    <font-awesome-icon icon="info-circle" class="ml-2 icon"/>
                 </b-col>
                 <b-col md="2"> 
                     <div class="custom-control custom-switch align-end">
@@ -62,6 +63,9 @@ export default {
     .custom-control-input:checked ~ .custom-control-label::before{
         border-color:#28a745;  
         background-color: #28a745;
+    }
+    .icon{
+        color: #bdc4cc;
     }
     
 </style>
