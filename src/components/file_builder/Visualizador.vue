@@ -33,7 +33,7 @@
         </div>
         <hr>
         <div class="p-2">
-             <area-code :code="code"  @updatingScore="updateScore"/>
+             <area-code />
         </div>
         <div class="wrapper-btn">
             <div class="text-center">
@@ -41,9 +41,11 @@
             </div>               
         </div>
     </div>
+
 </template>
 <script>
     import AreaCode from "@/components/file_builder/AreaCode.vue";
+    import { mapState } from 'vuex';
     export default {
         name: "Visualizador",
         components:{
@@ -51,17 +53,21 @@
         },
         data(){
             return{
-                code: ""
+                
             }            
         },
         methods:{
             updateScore(newValue) {
                 this.code = newValue  // 3.Updating
             },
-            mostrar(code){
-                this.code = code
-                console.log(this.code)
+            mostrar(){              
+                console.log("Estoy en boton " + this.$store.state.code)
             }   
+        },
+        computed:{
+            code(){
+                return this.$store.state.code
+            }
         }
     }
 </script>
@@ -71,7 +77,6 @@
     }
     .lbl{
         text-align: left;
-        font: Regular 14px/11px Segoe UI;
         letter-spacing: 0;
         color: #576573;
         opacity: 1;
