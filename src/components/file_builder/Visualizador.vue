@@ -37,7 +37,10 @@
         </div>
         <div class="wrapper-btn">
             <div class="text-center">
-                <b-button class=" btn-pre" @click="mostrar">Previsualizar</b-button>
+                <b-button v-b-modal.modal-1 class=" btn-pre" @click="mostrar">Previsualizar</b-button>
+                <b-modal id="modal-1" size="xl" title="Visualizador">
+                    <div v-html="code"></div>
+                </b-modal>
             </div>               
         </div>
     </div>
@@ -59,10 +62,8 @@
         methods:{
             updateScore(newValue) {
                 this.code = newValue  // 3.Updating
-            },
-            mostrar(){              
-                console.log("Estoy en boton " + this.$store.state.code)
-            }   
+            }
+              
         },
         computed:{
             code(){
