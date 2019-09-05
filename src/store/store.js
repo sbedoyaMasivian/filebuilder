@@ -14,7 +14,7 @@ export default new Vuex.Store({
   },
   actions: {
     pasarHtml(context, codigo){
-      console.log("se ejecuto " + codigo)
+      //console.log("se ejecuto " + codigo)
       context.commit("codigoHtml", codigo)
     }
   },

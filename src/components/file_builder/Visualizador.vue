@@ -37,7 +37,7 @@
         </div>
         <div class="wrapper-btn">
             <div class="text-center">
-                <b-button v-b-modal.modal-1 class=" btn-pre" @click="mostrar">Previsualizar</b-button>
+                <b-button v-b-modal.modal-1 class=" btn-pre" @click="formSubmit">Previsualizar</b-button>
                 <b-modal id="modal-1" size="xl" title="Visualizador">
                     <div v-html="code"></div>
                 </b-modal>
@@ -48,7 +48,10 @@
 </template>
 <script>
     import AreaCode from "@/components/file_builder/AreaCode.vue";
+    import Axios from 'axios';
+    import AxiosRetry from 'axios-retry';
     import { mapState } from 'vuex';
+import axiosRetry from 'axios-retry';
     export default {
         name: "Visualizador",
         components:{
@@ -62,7 +65,41 @@
         methods:{
             updateScore(newValue) {
                 this.code = newValue  // 3.Updating
+            },
+
+            formSubmit() {
+                //let currentObj = this;
+                axiosRetry(Axios, {retries:3 });
+                Axios.post('https://r9v124voa8.execute-api.us-west-1.amazonaws.com/prod/pdf', {
+                    "data": {},
+                    "html":this.$store.state.code,
+                    "options":{"encoding":"UTF-8", "zoom": 1}
+                })
+                .then(function (response) {
+                    console.log(response)
+                    Axios({
+                        url: response.data.filepath,
+                        method: 'GET',
+                        responseType : 'blob'
+                    })
+                    .then(function (response) {
+                        const url = window.URL.createObjectURL(new Blob([response.data]))
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.setAttribute('download', 'file.pdf'); //or any other extension
+                        document.body.appendChild(link);
+                        link.click();
+                        console.log(response)
+                    })
+                    .catch(function (error) {
+                        console.log(error)
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error)
+                });
             }
+        
               
         },
         computed:{

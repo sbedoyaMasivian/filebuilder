@@ -2,6 +2,8 @@ import Vue from "vue";
 import moment from "moment";
 import _ from "lodash";
 import Is from "is_js";
+//import Axios from 'axios';
+//import VueAxios from 'vue-axios'
 import BootstrapVue from "bootstrap-vue";
 import VueCodemirror from "vue-codemirror";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -29,6 +31,7 @@ Vue.set(Vue.prototype, "_", _);
 Vue.set(Vue.prototype, "is", Is);
 Vue.use(BootstrapVue);
 Vue.use(VueCodemirror);
+//Vue.use(Axios, VueAxios);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 new Vue({
