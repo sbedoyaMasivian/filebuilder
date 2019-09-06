@@ -10,8 +10,8 @@
                 <b-col></b-col>
                 <b-col md="3" >
                     <div class="ml-5 mt-2 mb-2 justify-content-center">
-                        <b-button class="m-1 bg-cancelar btn-size">Cancelar</b-button>
-                        <b-button class="m-1 bg-crear">Crear</b-button>                         
+                        <b-button class="m-1 bg-cancelar btn-size btn-light">Cancelar</b-button>
+                        <b-button class="m-1 bg-crear btn-success">Crear</b-button>                         
                     </div>
                 </b-col>
             </b-row>   
