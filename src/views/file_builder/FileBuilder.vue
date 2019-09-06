@@ -1,22 +1,22 @@
 <template>
-    <div>
-        <div class="bg-white wrapper-crear">
+    <div class="contenedor">
+        <div class="bg-white wrapper-crear shadow-sm">
             <b-row>
-                <b-col md="3">
+                <b-col md="2">
                     <div class="m-3 text-center">
                         <span class="title-subsection">Tipo de archivo</span>
                     </div>
                 </b-col>
                 <b-col></b-col>
-                <b-col md="4" >
-                    <div class="m-2 float-right">
+                <b-col md="3" >
+                    <div class="ml-5 mt-2 mb-2 justify-content-center">
                         <b-button class="m-1 bg-cancelar btn-size">Cancelar</b-button>
                         <b-button class="m-1 bg-crear">Crear</b-button>                         
                     </div>
                 </b-col>
             </b-row>   
         </div>            
-         <b-container fluid class="contenedor pb-2">
+         <b-container fluid class="contenedor pb-2 mt-3">
             <b-row>
                 <b-col md="5 pr-0">
                     <div class="m-2">
@@ -59,7 +59,7 @@
         height: 100%;
     }
     .wrapper-crear{
-        height: 72px;
+        height: 60px;
     }
     .title-subsection{
         font-size: 16px;

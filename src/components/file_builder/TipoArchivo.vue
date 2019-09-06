@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center bg-white border rounded wrapper float-right mb-2">
+    <div class="text-center bg-white border rounded wrapper float-right shadow-sm mb-2">
         <b-row>
             <b-col md="4">
                 <div class="mt-3">

@@ -20,7 +20,7 @@
                         <Label class="mb-1 ">Campos de reemplazo</Label>
                         <div class="form-group">
                             <select class="form-control" id="exampleFormControlSelect1">
-                                <option disabled selected>Escoge</option>
+                                <option disabled selected>Escoge el campo</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
@@ -32,7 +32,7 @@
             </b-row>
         </div>
         <hr>
-        <div class="p-2">
+        <div class="pt-2 pl-2 pr-2">
              <area-code />
         </div>
         <div class="wrapper-btn">
@@ -125,7 +125,7 @@ import axiosRetry from 'axios-retry';
     }
     .wrapper-btn{
         background-color: #EBEEF2;
-        height: 62px;
+        height: 60px;
     }
     .btn-pre{
         background-color: #002747;

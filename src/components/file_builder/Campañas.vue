@@ -1,10 +1,10 @@
 <template>
-    <div class="pt-2">
+    <div class="pt-2 pb-4">
         <div>
             <label>Campaña</label>
             <div class="form-group">
             <select class="form-control" id="exampleFormControlSelect1" placeholder="escoge la columna">
-                <option disabled selected>Select your option</option>
+                <option disabled selected>Escoge la campaña</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <select class="form-control" id="exampleFormControlSelect1" placeholder="escoge la columna">
-                <option disabled selected>Select your option</option>
+                <option disabled selected>Escoge la columna</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
