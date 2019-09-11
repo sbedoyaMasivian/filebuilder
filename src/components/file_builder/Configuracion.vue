@@ -1,9 +1,9 @@
 <template>
     <div class="">
-        <div class="bg-light border rounded-top p-db wrapper float-right">
+        <div class="bg-db text-white border rounded-top p-db wrapper ">
             <carga-base-datos />
         </div>
-        <div class="bg-white border rounded-bottom wrapper float-right">
+        <div class="bg-white border rounded-bottom wrapper ">
             <campanias />
         </div>
     </div>
@@ -21,11 +21,12 @@
 </script>
 <style lang="scss" scoped>
     .wrapper{
-        width: 70%;
         padding: 15px;
     }
+    .bg-db{
+        background-color: #002747;
+    }
     .p-db{
-        height: 160px;
-        //padding: 10px;
+        min-height: 160px;
     }
 </style>

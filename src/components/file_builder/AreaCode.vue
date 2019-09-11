@@ -22,7 +22,7 @@
 					theme: "monokai",
 					lineNumbers: true,
 					line: true
-					// more codemirror options, 更多 codemirror 的高级配置...
+					
 				}
 			}
 		},

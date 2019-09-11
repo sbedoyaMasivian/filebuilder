@@ -8,6 +8,7 @@ import BootstrapVue from "bootstrap-vue";
 import VueCodemirror from "vue-codemirror";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -21,6 +22,7 @@ import "codemirror/lib/codemirror.css"
 
 library.add(faFilePdf);
 library.add(faFileExcel);
+library.add(faFile);
 library.add(faInfoCircle);
 library.add(faEye);
 library.add(faTrashAlt);

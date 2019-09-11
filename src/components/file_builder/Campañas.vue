@@ -19,10 +19,7 @@
                     <label>Nombre aleatorio</label>
                 </b-col>
                 <b-col md="2"> 
-                    <div class="custom-control custom-switch align-end">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch">
-                        <label class="custom-control-label" for="customSwitch"></label>
-                    </div>
+                    <b-form-checkbox name="check-button" switch />
                 </b-col>
             </b-row>
         </div>
@@ -42,27 +39,48 @@
                     <font-awesome-icon icon="info-circle" class="ml-2 icon"/>
                 </b-col>
                 <b-col md="2"> 
-                    <div class="custom-control custom-switch align-end">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1"></label>
-                    </div>
+                    <b-form-checkbox v-model="checked" name="check-button" switch />
                 </b-col>
+                <b-col v-if="checked">
+                     <b-form-group id="input-group-2">
+                        <b-form-input id="input-2" placeholder="Escribe la contraseña" />
+                    </b-form-group> 
+                </b-col>
+
             </b-row>
         </div>  
     </div> 
 </template>
 <script>
 export default {
-    
+    name: "campanias",
+    data(){
+        return{
+             checked:false
+        }
+    },
+    methods:{
+        changeBandera(){
+            console.log("entro-ninguno: " + this.checked)
+            if(this.checked){
+                return this.checked = false
+                 console.log("entro-if: " + this.checked)
+            }else{
+                return this.checked = true
+                console.log("entro-else: " + this.checked)
+            }          
+        }
+    }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     .input-size{
         width: 100%;
     }
-    .custom-control-input:checked ~ .custom-control-label::before{
-        border-color:#28a745;  
-        background-color: #28a745;
+    .custom-control-input:checked~.custom-control-label::before {
+        color: #fff;
+        border-color: #28a745 !important;
+        background-color: #28a745 !important;
     }
     .icon{
         color: #bdc4cc;
